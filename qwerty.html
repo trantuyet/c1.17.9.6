@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mouse Event</title>
+</head>
+<style>
+    #demohover {
+        color: blue;
+    }
+
+    #demohover:hover {
+        color: red;
+    }
+</style>
+<body onload="docReady()">
+
+<img id="avatar" src="https://afamilycdn.com/k:thumb_w/600/4a4pVwK3xucccccccccccctBPajGwV/Image/2014/01/xuka-xinh-dep-305d3/cac-nang-cong-so-hoc-gi-tu-nhan-vat-xuka-trong-truyen-doremon.jpg" width="370" style="position:absolute;left:0; top:0;">
+<script>
+    function nhanPhimTren() {
+        console.log("Trên");
+    }
+    function nhanPhimDuoi() {
+        console.log("Duoi");
+    }
+    function nhanPhimTrai() {
+        console.log("Trai");
+    }
+    function nhanPhimPhai() {
+        let element = document.getElementById("avatar");
+        let vitrihientai = element.style.left;
+        element.style.left = parseInt(element.style.left) + 5 + 'px';
+    }
+
+    function nhanphim(evt) {
+        switch (evt.keyCode) {
+            case 37:
+                nhanPhimTrai();
+                break;
+            case 39:
+                nhanPhimPhai();
+                break;
+            case 38:
+                nhanPhimTren();
+                break;
+            case 40:
+                nhanPhimDuoi();
+                break;
+        }
+    }
+    function docReady() {
+        window.addEventListener('keydown', nhanphim);
+    }
+</script>
+</body>
+</html
